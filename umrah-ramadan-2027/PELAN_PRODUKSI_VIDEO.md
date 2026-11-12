@@ -1,10 +1,9 @@
 # PELAN PRODUKSI – VIDEO UMRAH RAMADAN 2027
 ## Darul Mubarak Travel & Tours | 9:16 | ±90 saat | Premium Luxury Islamic Cinematic
 
-> **Status:** Ini pelan produksi dan timeline suntingan, **bukan video siap**.
-> Video belum dirender kerana fail Master Video dan B-roll tidak dapat dimuat turun
-> ke persekitaran kerja ini, dan tiada akses terus kepada Higgsfield atau CapCut/Premiere.
-> Semua prompt dan timeline di bawah sedia untuk disalin dan digunakan terus.
+> **Status (dikemas kini):** Video draf v1 TELAH dirender → `output/DM_UmrahRamadan2027_9x16.mp4`
+> (1080×1920, 30 fps, 109.6 s, -14 LUFS). Lihat `HASIL_RENDER.md` untuk butiran, pembetulan dan perkara yang perlu disahkan.
+> Pelan asal di bawah dikekalkan sebagai rujukan; §1 mempunyai pembetulan dalam HASIL_RENDER.md (terdapat DUA poster/pakej).
 
 ---
 
