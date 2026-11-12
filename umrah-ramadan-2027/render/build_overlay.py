@@ -7,7 +7,7 @@ import json, math, os, subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 sys.path.insert(0, os.path.dirname(__file__))
-from timeline import W, H, FPS, SRC, OUT, TOTAL, INTER, END
+from timeline import W, H, FPS, SRC, OUT, TOTAL, INTER, END, HOOK, VARIANT
 
 # ---------------------------------------------------------------- style
 GOLD = (242, 193, 78)
@@ -236,8 +236,8 @@ def build():
 
     # ---- SCENE 1 HOOK
     add(0.25, 2.95, text_img("UMRAH RAMADAN 2027", F("bold", 40), GOLD_L, tracking=8), 540, 620, "fade", 0.5, 0.25)
-    add(0.15, 2.95, text_img("RAMADAN KALI INI…", F("black", 90), WHITE, 0, glow=GOLD, glow_r=18), 540, 760, "pop", 0.35, 0.25)
-    add(1.05, 2.95, text_img("DI TANAH SUCI?", F("black", 118), GOLD, 0, glow=(255, 170, 40), glow_r=22), 540, 910, "crash", 0.35, 0.25)
+    add(0.15, 2.95, text_img(HOOK[0], F("black", min(90, int(90 * 980 / F("black", 90).getlength(HOOK[0])))), WHITE, 0, glow=GOLD, glow_r=18), 540, 760, "pop", 0.35, 0.25)
+    add(1.05, 2.95, text_img(HOOK[1], F("black", min(118, int(118 * 980 / F("black", 118).getlength(HOOK[1])))), GOLD, 0, glow=(255, 170, 40), glow_r=22), 540, 910, "crash", 0.35, 0.25)
 
     # ---- Lower third (company)
     lt = rounded(760, 150, 22, EMERALD_D, GOLD, 3, 225)
@@ -324,33 +324,57 @@ def build():
 
     hh = rounded(560, 90, 45, EMERALD_D, GOLD, 3, 240)
     paste_c(hh, text_img("HADIAH ISTIMEWA", F("black", 44), GOLD, shadow=False), hh.width / 2, hh.height / 2)
-    add(58.2, 74.9, hh, 540, 860, "pop", 0.4, 0.3)
     def chip(n, txt, big=False):
         w = 900; h = 104 if not big else 128
         c = rounded(w, h, 26, EMERALD_D if not big else (120, 85, 10), GOLD, 3, 235)
         d = ImageDraw.Draw(c); r = h // 2 - 12
         d.ellipse((30 + 22, 30 + h / 2 - r, 30 + 22 + 2 * r, 30 + h / 2 + r), fill=GOLD + (255,))
         paste_c(c, text_img(str(n), F("black", 40), BLACK, shadow=False), 30 + 22 + r, 30 + h / 2)
-        im = text_img(txt, F("black" if big else "xbold", 48 if big else 42), GOLD_L if big else WHITE, shadow=False)
+        im = text_img(txt, F("black" if big else "xbold", 44 if big else 42), GOLD_L if big else WHITE, shadow=False)
         c.alpha_composite(im, (30 + 50 + 2 * r, int(30 + h / 2 - im.height / 2)))
         return c
-    add(59.4, 74.9, chip(1, "BEG ISTIMEWA"), 540, 975, "left", 0.4, 0.3)
-    add(62.5, 74.9, chip(2, "KAIN IHRAM"), 540, 1090, "right", 0.4, 0.3)
-    add(63.8, 74.9, chip(3, "MINI TELEKUNG (JEMAAH WANITA)"), 540, 1205, "left", 0.4, 0.3)
-    add(68.8, 74.9, chip(4, "AIR ZAMZAM 500 ML PERCUMA", big=True), 540, 1335, "pop", 0.45, 0.3)
-    # Real product photos (optional): SRC/gifts/ihram.jpg, SRC/gifts/telekung.jpg
-    for k, (fn, cap, t_in, cx) in enumerate([("ihram", "KAIN IHRAM", 62.5, 290), ("telekung", "MINI TELEKUNG", 63.8, 790)]):
+    # crop boxes keep product in frame and hide unrelated text (e.g. phone number on a bag in telekung photo)
+    CROP = {"telekung": (60, 0, 900, 1120)}
+    def gift_photo(fn, pw, phh):
         path = next((f"{SRC}/gifts/{fn}.{e}" for e in ("jpg", "jpeg", "png") if os.path.exists(f"{SRC}/gifts/{fn}.{e}")), None)
-        if not path: continue
+        if not path: return None
         ph = Image.open(path).convert("RGBA")
-        pw, phh = 420, 520
-        s = max(pw / ph.width, phh / ph.height)
-        ph = ph.resize((int(ph.width * s) + 1, int(ph.height * s) + 1), Image.LANCZOS)
-        ph = ph.crop(((ph.width - pw) // 2, 0, (ph.width - pw) // 2 + pw, phh))
-        fr = rounded(pw + 24, phh + 90, 18, WHITE, GOLD, 4, 255)
-        fr.alpha_composite(ph, (42, 42))
-        paste_c(fr, text_img(cap, F("black", 38), EMERALD_D, shadow=False), fr.width / 2, 42 + phh + 40)
-        add(t_in, 74.9, fr, cx, 470, "pop", 0.45, 0.3)
+        if fn in CROP: ph = ph.crop(CROP[fn])
+        s_ = max(pw / ph.width, phh / ph.height)
+        ph = ph.resize((int(ph.width * s_) + 1, int(ph.height * s_) + 1), Image.LANCZOS)
+        return ph.crop(((ph.width - pw) // 2, 0, (ph.width - pw) // 2 + pw, phh))
+
+    if VARIANT != "v2":
+        add(58.2, 74.9, hh, 540, 860, "pop", 0.4, 0.3)
+        add(59.4, 74.9, chip(1, "BEG ISTIMEWA"), 540, 975, "left", 0.4, 0.3)
+        add(62.5, 74.9, chip(2, "KAIN IHRAM"), 540, 1090, "right", 0.4, 0.3)
+        add(63.8, 74.9, chip(3, "MINI TELEKUNG (JEMAAH WANITA)"), 540, 1205, "left", 0.4, 0.3)
+        add(68.8, 74.9, chip(4, "AIR ZAMZAM 500 ML PERCUMA", big=True), 540, 1335, "pop", 0.45, 0.3)
+        for (fn, cap, t_in, cx) in [("ihram", "KAIN IHRAM", 62.5, 290), ("telekung", "MINI TELEKUNG", 63.8, 790)]:
+            ph = gift_photo(fn, 420, 520)
+            if ph is None: continue
+            fr = rounded(444, 610, 18, WHITE, GOLD, 4, 255)
+            fr.alpha_composite(ph, (42, 42))
+            paste_c(fr, text_img(cap, F("black", 38), EMERALD_D, shadow=False), fr.width / 2, 42 + 520 + 40)
+            add(t_in, 74.9, fr, cx, 470, "pop", 0.45, 0.3)
+    else:
+        # beg (no photo) over presenter
+        add(58.2, 62.45, hh, 540, 860, "pop", 0.4, 0.2)
+        add(59.4, 62.45, chip(1, "BEG ISTIMEWA"), 540, 975, "left", 0.4, 0.2)
+        # full-frame product reveals
+        for (fn, n, cap, t0_, t1_, big) in [("ihram", 2, "KAIN IHRAM", 62.5, 64.0, False),
+                                            ("telekung", 3, "MINI TELEKUNG (JEMAAH WANITA)", 64.0, 66.0, False),
+                                            ("zamzam", 4, "AIR ZAMZAM 500 ML PERCUMA", 68.8, 75.0, True)]:
+            ph = gift_photo(fn, 720, 960)
+            if ph is not None:
+                fr = rounded(752, 992, 22, WHITE, GOLD, 5, 255)
+                fr.alpha_composite(ph, (46, 46))
+                add(t0_, t1_ - 0.02, fr, 540, 760, "pop", 0.3, 0.15, drift=0.008)
+            add(t0_ + 0.12, t1_ - 0.02, chip(n, cap, big), 540, 1330, "up", 0.3, 0.15)
+        # recap over B-roll
+        add(66.0, 68.78, hh, 540, 760, "pop", 0.3, 0.2)
+        for k, txt in enumerate(["BEG ISTIMEWA", "KAIN IHRAM", "MINI TELEKUNG (JEMAAH WANITA)"]):
+            add(66.1 + k * 0.15, 68.78, chip(k + 1, txt), 540, 880 + k * 115, "left" if k % 2 == 0 else "right", 0.35, 0.2)
 
     vc = rounded(900, 220, 28, EMERALD_D, GOLD, 3, 235)
     paste_c(vc, text_img("PROMOSI DIBUKA SEKARANG", F("xbold", 46), WHITE, shadow=False), vc.width / 2, 30 + 62)
@@ -431,7 +455,7 @@ def main():
             render_overlay(t, im).convert("RGB").resize((540, 960)).save(f"{OUT}/prev_{t:06.2f}.jpg", quality=85)
         return
 
-    final = os.environ.get("FINAL", f"{OUT}/DM_UmrahRamadan2027_9x16.mp4")
+    final = os.environ.get("FINAL", f"{OUT}/DM_UmrahRamadan2027_9x16" + ("" if VARIANT == "v1" else "_" + VARIANT) + ".mp4")
     dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"{OUT}/base.mp4", "-f", "rawvideo", "-pix_fmt", "rgba", "-"],
                            stdout=subprocess.PIPE)
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}",

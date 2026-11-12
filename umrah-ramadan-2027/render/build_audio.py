@@ -6,7 +6,7 @@ Islamic cinematic instrumental / nasyid track in CapCut if desired (keep ducking
 import os, subprocess, sys, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(__file__))
-from timeline import MASTER, OUT, VOICE, TOTAL, INTER, END, seg_starts
+from timeline import MASTER, OUT, VOICE, TOTAL, INTER, END, SPARKLES, seg_starts
 
 SR = 48000
 N = int(TOTAL * SR)
@@ -117,13 +117,14 @@ def place(buf, clip, t, g):
 
 def main():
     v = voice_track()
-    music = pad()
-    music += 0.5 * pulse(INTER[0], INTER[1]) + 0.35 * pulse(52.2, 80.7)
+    from islamic_music import compose
+    music = compose(TOTAL, [(0.0, 3.0, "sparse"), (3.0, INTER[0], "sparse"), (INTER[0], INTER[1], "full"),
+                            (INTER[1], 88.8, "full"), (88.8, 98.8, "calm"), (98.8, TOTAL, "end")])
     # music level curve (dB): base under voice handled by ducking
     lvl = np.full(N, -14.0)
     t = np.arange(N) / SR
-    lvl[(t >= INTER[0]) & (t < INTER[1])] = -9.0
-    lvl[t >= END[0]] = -8.0
+    lvl[(t >= INTER[0]) & (t < INTER[1])] = -6.0
+    lvl[t >= END[0]] = -6.0
     lvl[t > TOTAL - 1.5] -= np.linspace(0, 40, (t > TOTAL - 1.5).sum())
     # ducking from voice envelope
     win = int(0.05 * SR)
@@ -131,24 +132,24 @@ def main():
     act = (ve > 0.02).astype(float)
     sm = int(0.25 * SR)
     act = np.convolve(act, np.ones(sm) / sm, "same")
-    duck_db = -12.0 * np.clip(act * 1.5, 0, 1)
-    music *= 10 ** ((lvl + duck_db) / 20)
+    duck_db = -7.0 * np.clip(act * 1.5, 0, 1)
+    music *= (10 ** ((lvl + duck_db) / 20))[:, None]
 
     sfx = np.zeros(N)
     for tt in (0.0, 33.3, 48.9, 52.2, END[0]):
-        place(sfx, impact(), tt, 0.55)
+        place(sfx, impact(), tt, 0.28)
     cuts = seg_starts()
     for c in cuts[1:]:
         if min(abs(c - x) for x in (33.3, 52.2, END[0])) > 0.3:
-            place(sfx, whoosh(), c - 0.35, 0.22)
-    place(sfx, riser(), INTER[0] - 2.0, 0.35)
-    place(sfx, riser(), END[0] - 2.0, 0.35)
-    for tt in (59.4, 62.5, 63.8, 68.8):
-        place(sfx, sparkle(), tt, 0.35)
+            place(sfx, whoosh(), c - 0.35, 0.10)
+    place(sfx, riser(), INTER[0] - 2.0, 0.16)
+    place(sfx, riser(), END[0] - 2.0, 0.16)
+    for tt in SPARKLES:
+        place(sfx, sparkle(), tt, 0.15)
 
-    mix = v * 0.9 + music + sfx
-    mix /= max(1.0, np.abs(mix).max() / 0.95)
-    st = np.stack([mix, mix], 1)
+    mono = v * 0.9 + sfx
+    st = music + mono[:, None]
+    st /= max(1.0, np.abs(st).max() / 0.95)
     pcm = (np.clip(st, -1, 1) * 32767).astype(np.int16)
     raw = f"{OUT}/mix_raw.wav"
     with wave.open(raw, "w") as w:

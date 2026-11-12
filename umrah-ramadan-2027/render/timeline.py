@@ -59,3 +59,39 @@ def seg_starts():
         out.append(round(t, 3))
         t += s[2]
     return out
+
+SPARKLES = [59.4, 62.5, 63.8, 68.8]
+HOOK = ("RAMADAN KALI INI…", "DI TANAH SUCI?")
+
+# ---------------------------------------------------------------- Variant v2 (same style, gift-focused)
+VARIANT = os.environ.get("VARIANT", "v1")
+if VARIANT == "v2":
+    def gift(n):
+        return f"{SRC}/gifts/{n}.jpg"
+    HOOK = ("BAYANGKAN…", "RAMADAN DI TANAH SUCI!")
+    SPARKLES = [59.4, 62.5, 64.0, 68.8]
+    SEGMENTS = [
+        (br("IMG_7399.mov"), 0.0, 3.0, 1.40, 1.06, "hook"),     # T0.0  Kaabah malam
+        (MASTER,             4.9, 4.0, 1.00, 1.05, "master"),   # T3.0
+        (br("IMG_6437.MOV"), 0.0, 4.4, 1.00, 1.10, "broll"),    # T7.0  halaman Masjidil Haram
+        (MASTER,            13.3, 2.8, 1.10, 1.14, "master"),   # T11.4
+        (br("IMG_6415.MOV"), 12.0, 5.9, 1.00, 1.10, "broll"),   # T14.2 tawaf
+        (MASTER,            22.0, 5.8, 1.00, 1.05, "master"),   # T20.1
+        (br("IMG_7400.MOV"), 0.0, 4.4, 1.12, 1.00, "broll"),    # T25.9 Kaabah malam 4K
+        (br("IMG_6432.MOV"), 3.0, 3.0, 1.00, 1.08, "dim"),      # T30.3 title + posters
+        (br("IMG_7399.mov"), 3.0, 3.5, 1.25, 1.05, "bg"),       # T33.3 price
+        (br("IMG_6437.MOV"), 20.0, 6.5, 1.00, 1.06, "bg"),      # T36.8 table
+        (br("IMG_5542.MOV"), 30.0, 5.0, 1.00, 1.06, "bg"),      # T43.3 hotel + flight
+        (MASTER,            37.3, 3.9, 1.00, 1.05, "master"),   # T48.3
+        (br("IMG_5542.MOV"), 10.0, 5.7, 1.00, 1.10, "broll"),   # T52.2 jemaah DM (ziarah)
+        (MASTER,            46.9, 4.6, 1.10, 1.14, "master"),   # T57.9 beg
+        (gift("ihram"),      0.0, 1.5, 1.00, 1.05, "bg"),       # T62.5 kain ihram
+        (gift("telekung"),   0.0, 2.0, 1.00, 1.05, "bg"),       # T64.0 mini telekung
+        (br("IMG_6636.MOV"), 0.0, 2.8, 1.00, 1.08, "broll"),    # T66.0 jemaah DM dalam masjid
+        (gift("zamzam"),     0.0, 6.2, 1.00, 1.06, "bg"),       # T68.8 air Zamzam
+        (MASTER,            64.0, 5.7, 1.00, 1.05, "master"),   # T75.0
+        (br("IMG_7522.MOV"), 0.0, 8.1, 1.00, 1.10, "broll"),    # T80.7 jemaah
+        (br("IMG_7400.MOV"), 8.0, 10.0, 1.20, 1.00, "broll"),   # T88.8 closing
+        (MASTER,            87.8, 5.8, 1.05, 1.12, "master"),   # T98.8 CTA
+        (br("IMG_7400.MOV"), 18.0, 5.0, 1.00, 1.08, "bg"),      # T104.6 end card
+    ]

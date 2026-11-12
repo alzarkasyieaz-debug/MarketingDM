@@ -1,4 +1,17 @@
-# HASIL RENDER – Video Umrah Ramadan 2027 (Draf v1)
+# HASIL RENDER – Video Umrah Ramadan 2027
+
+| Versi | Fail | Beza |
+|---|---|---|
+| v1 | `output/DM_UmrahRamadan2027_9x16.mp4` | Hook "RAMADAN KALI INI… DI TANAH SUCI?"; gambar ihram & telekung muncul kecil bersama senarai hadiah |
+| v2 | `output/DM_UmrahRamadan2027_9x16_v2.mp4` | Hook "BAYANGKAN… RAMADAN DI TANAH SUCI!"; B-roll berbeza; setiap hadiah (ihram, telekung, Zamzam) dipaparkan skrin penuh tepat ketika disebut |
+
+**Audio (kemas kini):** muzik instrumental gaya Islamik yang dijana sendiri (`render/islamic_music.py`, bebas hak cipta):
+melodi oud maqam Hijaz + dengung + rentak daf (bahagian pakej & promosi) + gema. Kesan bunyi (impact, whoosh, riser, sparkle) direndahkan ~50%.
+Muzik ±17 dB di bawah suara; naik semasa selitan pakej dan kad akhir. Boleh diganti dengan nasyid berlesen di CapCut jika mahu.
+Gambar hadiah daripada folder Drive "Hadiah Percuma" (tiada gambar beg – beg dipaparkan sebagai teks sahaja).
+
+---
+
 
 **Fail:** `output/DM_UmrahRamadan2027_9x16.mp4`
 **Spesifikasi:** 1080×1920 (9:16) • 30 fps • H.264 + AAC 256k • 109.6 saat • kenyaringan -14 LUFS (sesuai TikTok/Reels)
@@ -43,7 +56,7 @@ dengan pembetulan ejaan (cth. "Darul Mubarak", "Masjidil Haram", "telekung", "Za
 - [ ] Ejaan hotel "Hotel Oriens Shisha" (dibaca dari poster resolusi rendah).
 - [ ] Harga Iktikaf "RM 7,830" muncul dua kali (Pertengahan & Sambut Syawal). Begitulah yang tertera pada poster.
 - [ ] "Bilik berempat, harga seorang": kenyataan "harga seorang" adalah andaian biasa industri. Buang jika tidak tepat.
-- [ ] Muzik latar ialah pad ambien yang dijana sendiri (bebas hak cipta). Boleh diganti dengan nasyid/instrumental berlesen dalam CapCut.
+- [ ] Gambar beg istimewa tiada – hantar jika mahu dimasukkan.
 
 ## Gambar hadiah (kain ihram & mini telekung)
 Skrip sudah ada slot untuk gambar produk sebenar (muncul pada 1:02 dan 1:04 bersama senarai hadiah).
@@ -53,7 +66,7 @@ kemudian render semula. Gambar dalam chat tidak boleh dicapai oleh skrip.
 ## Cara render semula
 ```bash
 export SRC_DIR=/path/to/src OUT_DIR=/path/to/out   # src: master.mov, p1.jpg, p2.jpg, logo.png, broll/, gifts/
-python3 render/build_base.py      # potong, reframe 9:16, zoom, colour grade
+VARIANT=v2 python3 render/build_base.py      # potong, reframe 9:16, zoom, colour grade
 python3 render/build_audio.py     # suara dibersihkan + muzik + SFX + ducking
 cp render/transkrip_master.json $OUT_DIR/tx.json
 python3 render/build_overlay.py   # grafik, tipografi, subtitle → mp4 akhir

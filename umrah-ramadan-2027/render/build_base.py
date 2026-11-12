@@ -26,7 +26,9 @@ def main():
         vf = (f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,"
               f"scale=w='2*trunc({W//2}*{Z})':h='2*trunc({H//2}*{Z})':eval=frame:flags=bicubic,"
               f"crop={W}:{H},{GRADE[style]},format=yuv420p")
-        cmd = ["ffmpeg", "-v", "error", "-y", "-ss", str(ss), "-i", src, "-t", str(d), "-an",
+        is_img = src.lower().endswith((".jpg", ".jpeg", ".png"))
+        inp = ["-loop", "1", "-framerate", str(FPS), "-i", src] if is_img else ["-ss", str(ss), "-i", src]
+        cmd = ["ffmpeg", "-v", "error", "-y", *inp, "-t", str(d), "-an",
                "-vf", vf, "-r", str(FPS), "-frames:v", str(round(d * FPS)),
                "-c:v", "libx264", "-preset", "veryfast", "-crf", "14", out]
         print(f"[{i:02d}] {os.path.basename(src)} ss={ss} d={d} {style}", flush=True)
