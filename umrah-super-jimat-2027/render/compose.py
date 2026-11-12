@@ -278,7 +278,7 @@ def end_card():
     paste_c(c, text_img("Backpack  •  Kain Ihram / Telekung  •  Air Zam-Zam 500ml", fX(32), WHITE), 540, 1058)
     paste_c(c, text_img("Promosi Year End Sale – berakhir Disember 2026", F("Inter-Medium", 32), (230, 230, 230)), 540, 1110)
     paste_c(c, wa_button(), 540, 1260)
-    paste_c(c, text_img("www.darulmubarak.com", fX(40), WHITE), 540, 1420)
+    paste_c(c, text_img("www.darulmubarak.com.my", fX(40), WHITE), 540, 1420)
     paste_c(c, text_img("DARUL MUBARAK TRAVEL & TOURS", fX(34), GOLD), 540, 1480)
     return to_np(c)
 ENDC = end_card()

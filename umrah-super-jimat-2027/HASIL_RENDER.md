@@ -142,7 +142,8 @@ Cara menggantikan: letak klip Higgsfield dalam `$WORK/br/` (contoh `kaabah_hf.mp
 - [ ] **Tiada harga dalam video.** Tiada poster Umrah Super Jimat Januari 2027 dalam folder. Hantar poster jika mahu babak *Price Reveal* 3D
       (slot paling sesuai: selepas "Januari 2027", 0:11.5, gantikan B-roll jemaah).
 - [ ] **Tarikh:** satu laluan transkripsi mendengar "**27** Januari 2027", satu lagi hanya "Januari 2027". Video memaparkan **"JANUARI 2027"** sahaja (selamat). Sahkan jika ada tarikh tepat.
-- [ ] **Nombor WhatsApp 016-524 7001 / 016-524 3001** dan **www.darulmubarak.com** diambil daripada poster rasmi Pakej Ramadan 2027 (folder "Poster Pakej Ramadan"). Sahkan nombor yang betul untuk kempen ini.
+- [ ] **Nombor WhatsApp 016-524 7001 / 016-524 3001** diambil daripada poster rasmi Pakej Ramadan 2027 (folder "Poster Pakej Ramadan"). Sahkan nombor yang betul untuk kempen ini.
+- [x] Laman web dibetulkan kepada **www.darulmubarak.com.my** (disahkan oleh klien).
 - [ ] Ayat yang dibuang (0:04–0:09): sahkan nama promosi/syarikat jika mahu dimasukkan semula.
 - [ ] Hadiah "kain ihram **atau** telekung" (bukan kedua-dua) dipaparkan sebagai "Kain Ihram / Telekung", sama seperti yang disebut penyampai.
 - [ ] Tag "Jemaah Darul Mubarak" pada B-roll IMG_5542 berdasarkan beg & lanyard DM dalam rakaman.
