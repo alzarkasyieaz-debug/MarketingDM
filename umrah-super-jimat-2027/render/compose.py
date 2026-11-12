@@ -148,7 +148,7 @@ title("SALE", o(38.70), o(43.2), 600, 270, face="white")
 # 11 presenter: urgency
 scene(o(43.2), o(46.9), "pres", z=[(o(43.2), 1.0), (o(43.9), 1.02), (o(44.05), 1.15), (o(46.9), 1.18)])
 # 12-13 B-roll
-scene(o(46.9), o(49.8), "broll", clip="jalan", ss=1.9, z=[(o(46.9), 1.08), (o(49.8), 1.0)])
+scene(o(46.9), o(49.8), "broll", clip="jemaah4", ss=0.0, z=[(o(46.9), 1.08), (o(49.8), 1.0)])
 scene(o(49.8), o(52.2), "broll", clip="lobi", ss=0.0, z=[(o(49.8), 1.0), (o(52.2), 1.06)])
 # 14 cut-out on studio: company
 scene(o(52.2), o(55.1), "cut", bg=("studio",), light="studio", ps=[(o(52.2), 0.86), (o(55.1), 0.9)])

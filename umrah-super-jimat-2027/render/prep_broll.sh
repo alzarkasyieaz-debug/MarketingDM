@@ -9,7 +9,7 @@ enc(){ ffmpeg -v error -y "$@" -an -c:v libx264 -crf 14 -preset medium -pix_fmt 
 enc -ss 0.5  -t 4.0 -i $SRC/broll/IMG_5542.MOV -vf "$TM,$SC,setpts=2*PTS" $W/br/jemaah1.mp4
 enc -ss 37   -t 4.0 -i $SRC/broll/IMG_5542.MOV -vf "$TM,$SC,setpts=2*PTS" $W/br/jemaah2.mp4
 enc -ss 85   -t 3.5 -i $SRC/broll/IMG_5542.MOV -vf "$TM,$SC,setpts=2*PTS" $W/br/jemaah3.mp4
-enc -ss 72   -t 8   -i $SRC/broll/IMG_5703.MOV -vf "$TM,$SC" $W/br/jalan.mp4
+enc -ss 70   -t 2.0 -i $SRC/broll/IMG_5542.MOV -vf "$TM,$SC,setpts=2*PTS" $W/br/jemaah4.mp4
 enc -ss 0    -t 15.9 -i $SRC/broll/IMG_6637.MOV -vf "$TM,$SC" $W/br/lobi.mp4
 enc -ss 0    -t 8.6 -i $SRC/broll/IMG_7522.MOV -vf "$TM,$SC" $W/br/haram.mp4
 # Kaabah (landscape SDR, 1.6 s): portrait crop around the Kaabah + motion-interpolated 3x slow motion

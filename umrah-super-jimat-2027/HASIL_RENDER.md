@@ -40,8 +40,8 @@ Hantar poster rasmi jika mahu babak harga ditambah (lihat §7).
 |---|---|---|
 | IMG_7405 | Kaabah waktu malam (1.6 s, landskap) | Hook, latar cut-out babak salam, penutup emosi (slow-mo interpolasi 3×) |
 | IMG_7522 | Masjidil Haram waktu siang (HDR) | Latar cut-out "JANUARI 2027" (bingkai beku + push-in; orang ramai dikaburkan kuat) |
-| IMG_5542 | Jemaah DM dengan beg & lanyard DM (60 fps) | Slow-mo 2× – babak peluang & penutup |
-| IMG_5703 | Jemaah berjalan di Makkah | Babak "rebut segera" |
+| IMG_5542 | Jemaah DM dengan beg & lanyard DM (60 fps) | Slow-mo 2× – babak peluang, "rebut segera" (1:10) & penutup |
+| IMG_5703 | Jalan di Makkah | **Tidak digunakan** – digugurkan kerana ada individu yang tidak menutup aurat |
 | IMG_6637 | Lobi hotel, jemaah wanita DM bertelekung | Babak "pengalaman Umrah Super Jimat" |
 
 Klip HDR (HLG) ditukar ke SDR dengan tonemap Hable.
@@ -63,7 +63,7 @@ Klip HDR (HLG) ditukar ke SDR dengan tonemap Hable.
 | 0:27.1–0:30.7 | Daftar & terima | Cut-out + studio | Penyampai + 3 chip hadiah | "DAFTAR & TERIMA SEMUA!" |
 | 0:30.7–0:36.8 | Year End Sale | Cut-out + studio + 3D | Penyampai | 3D **"YEAR END" / "SALE"**, reben merah "BERAKHIR DISEMBER 2026" |
 | 0:36.8–0:40.5 | Desakan | Punch zoom | Plate asal | "REBUT SEGERA!", "SELAGI STOK MASIH ADA" |
-| 0:40.5–0:45.8 | Pengalaman | B-roll | Jemaah ke Haram, lobi hotel DM | "PENGALAMAN UMRAH SUPER JIMAT" |
+| 0:40.5–0:45.8 | Pengalaman | B-roll | Jemaah DM dengan beg DM (slow-mo), lobi hotel DM | "PENGALAMAN UMRAH SUPER JIMAT" |
 | 0:45.8–0:48.7 | Syarikat | Cut-out + studio | Penyampai + lencana logo | "DARUL MUBARAK TRAVEL & TOURS" |
 | 0:48.7–0:56.9 | Emosi | Slow-mo, zoom-out Kaabah | Jemaah DM → Kaabah | "Impian anda…", "Menjadi **TETAMU ALLAH**" (serif) |
 | 0:56.9–1:00.4 | **CTA** | Riser → cut-out + studio + 3D | Penyampai | 3D **"DAFTAR" / "SEGERA!"**, butang WhatsApp berdenyut |
