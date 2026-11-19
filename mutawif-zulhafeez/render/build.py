@@ -538,7 +538,7 @@ def build_overlays():
     q = lambda s: T_QUBA + s
     add(q(1.10), q(3.75), keyword([("MASJID", WHITE), ("PERTAMA", GOLD)], 116), W / 2, 1270, "crash", 0.35, 0.2)
     add(q(3.80), q(5.10), keyword([("SOLAT", WHITE), ("BERJEMAAH", GOLD)], 108), W / 2, 1270, "pop", 0.3, 0.2)
-    fx(q(6.95), q(7.95), counter_fx(19, "PINTU", 1060), out=0.2)
+    fx(q(6.95), q(7.95), counter_fx(19, "PINTU", 560), out=0.2)
     add(q(7.96), q(10.0), keyword([("2", GOLD), ("PINTU BESAR", WHITE)], 112, "JEMAAH LELAKI"), W / 2, 1250, "pop", 0.3, 0.2)
     add(q(10.04), q(13.2), keyword([("1", GOLD), ("PINTU BESAR", WHITE)], 112), W / 2, 1270, "pop", 0.3, 0.3)
 

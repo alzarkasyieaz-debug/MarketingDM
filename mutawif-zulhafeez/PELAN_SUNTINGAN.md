@@ -52,7 +52,7 @@ Tiada dalam mana-mana audio (Ustaz sendiri yang bercakap). Paparan nama/gambar d
 | 0:19.1–0:21.5 | | Latar IMG_2177 kabur, parallax | **A. Cut-out sinematik** (MODNet) dengan cahaya rim emas, naik + skala | | Shimmer |
 | 0:21.5–0:23.9 | | **C. Skrin terbelah**: atas F0F0E1AF (vest DM), bawah IMG_3195 (bersama jemaah), garis emas di tengah, pan bertentangan | | | Whoosh |
 | 0:23.9–0:29.1 | **Tazkirah Masjid Quba** | IMG_2048 0–5.2 s, zoom 1.05→1.12 | Pin "MASJID QUBA – Madinah" | "MASJID **PERTAMA**" (0:25.0) → "SOLAT **BERJEMAAH**" (0:27.7) | Suara Ustaz; muzik turun (ducking -10 dB) |
-| 0:29.1–0:31.9 | | IMG_2048 5.2–8.0 s, **punch-in** 1.28 | – | Kaunter "1 → **19**" + "PINTU" (0:30.85) | Bunyi tik ×19 |
+| 0:29.1–0:31.9 | | IMG_2048 5.2–8.0 s, **punch-in** 1.28 | – | Kaunter "1 → **19**" + "PINTU" (0:30.85), di langit atas kepala Ustaz (tidak menutup wajah) | Bunyi tik ×19 |
 | 0:31.9–0:37.4 | | IMG_2048 8.0–13.5 s | – | "**2** PINTU BESAR / JEMAAH LELAKI" (0:31.86) → "**1** PINTU BESAR" (0:33.94) | |
 | *(sepanjang 0:23.9–0:37.3)* | | | | Subtitle perkataan-demi-perkataan (Inter ExtraBold 62, perkataan aktif dalam pil emas, kata kunci emas), y≈1500 | |
 | 0:37.4–0:39.8 | Peralihan emosi | IMG_2048 13.35–14.6 s slow-mo 0.52× (Ustaz berpaling & berjalan) | – | – | Riser, muzik membina |
