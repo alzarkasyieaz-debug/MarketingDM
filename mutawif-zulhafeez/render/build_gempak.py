@@ -176,7 +176,7 @@ def make_segments():
     return segs, cuts
 
 # ================================================================== overlays
-def slam(txt_parts, size=150, maxw=1020, sub=None):
+def slam(txt_parts, size=150, maxw=930, sub=None):
     im = two_tone(txt_parts, F("black", size), glow=GOLD)
     if im.width > maxw: im = scaled(im, maxw / im.width)
     if sub: im = stack([im, text_img(sub, F("black", int(size * 0.42)), WHITE)], 0)
