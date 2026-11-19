@@ -78,3 +78,26 @@ python3 render/build_testi.py audio
 python3 render/build_testi.py video
 ```
 Petikan & perkataan: `render/edl_testi.py`. Grafik: `overlays()` dalam `render/build_testi.py`.
+
+---
+
+# VERSI GEMPAK – "3 SEBAB JEMAAH KATA DIA TERBAIK"
+
+**Fail:** `output/DM_Testimoni_GEMPAK_UstazZulhafeez_9x16.mp4` • 72 s • 1080×1920 • 30 fps
+**Skrip:** `render/build_gempak.py` (guna transkrip & aset yang sama)
+
+Konsep: format kiraan (listicle) yang tinggi retention – cold open pantas, title slam, 3 bab bernombor dengan bar progres, penutup "verdict", CTA. Semua ucapan asli jemaah; hanya jeda dibuang.
+
+| Output | Babak | Kandungan |
+|---|---|---|
+| 0:00–0:04.4 | **Cold open** | 3 one-liner berturut-turut: Jemaah 3 *"A lah terbaik."* → Jemaah 2 *"memang 100 peratus lah"* → Jemaah 3 *"Sempoi, padu, bahang."* – teks gergasi menghentak + gegaran skrin + whip |
+| 0:04.4–0:07.6 | **Title slam** | Cut-out Ustaz terbang masuk + speed lines + bass drop: "KATA JEMAAH, INILAH **USTAZ ZULHAFEEZ**" → kilat → "**3** SEBAB JEMAAH KATA DIA TERBAIK!" |
+| 0:07.6–0:16.7 | **#1 SEMPOI & BANYAK BELAJAR** | Jemaah 2: sempoi, boleh mengopi sekali, banyak belajar daripada mutawif (skrin terbelah + footage Ustaz mengajar di Quba) |
+| 0:16.7–0:36.9 | **#2 KOMITMEN TERBAIK** | Jemaah 3: "bersama **Ustaz Zulhafeez**" (cut-out + speed lines + slam nama), komitmen terbaik, steady; kisah jemaah hilang di Masjid Quba → "mutawif kita boleh cari" (lapisan kenangan) |
+| 0:36.9–0:50.9 | **#3 FIRST TIME PUN LANCAR** | Jemaah 2: first time takut… berkat mutawif menunjuk ajar… berjalan lancar (muzik lebih tenang, kad kenangan) |
+| 0:50.9–1:06.5 | **Verdict** | Jemaah 1: "peluang kedua… minta mutawif yang sama" (bingkai foto Ustaz) → Jemaah 2: kaunter 0→**100%**, "terbaik ada Darul Mubarak" |
+| 1:06.5–1:12.0 | **CTA** | Logo DM, "UMRAH BERSAMA USTAZ ZULHAFEEZ", "NAK RASAI PENGALAMAN UMRAH SEPERTI INI?", butang "HUBUNGI KAMI SEKARANG" |
+
+Gaya: kata kunci 120–170 px Inter Black (emas panas + putih), zoom punch pada setiap slam, gegaran skrin pada impak, whip-pan motion blur antara jemaah/kad, kad bab skrin penuh (jalur emas bergerak + nombor gergasi), bar progres 1-2-3 di atas.
+Audio: muzik maqam 100 BPM + kick & clap (lebih perlahan dalam bab #3), boom pada title/kad bab/nama Ustaz, whoosh pada whip, shimmer pada setiap sebutan mutawif, tik kaunter 100%.
+Tajuk bab ditulis berdasarkan kata-kata jemaah sendiri (sempoi / banyak belajar, komitmen terbaik / boleh cari, first time / berjalan lancar).
