@@ -372,7 +372,7 @@ def render(times=None):
     enc = None
     if times is None:
         enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
-                                "-i", "-", "-i", f"{OUT}/mix_action.wav", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+                                "-i", "-", "-i", f"{OUT}/mix_action.wav", "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-maxrate", "11M", "-bufsize", "22M",
                                 "-pix_fmt", "yuv420p", "-profile:v", "high", "-c:a", "aac", "-b:a", "256k", "-shortest",
                                 "-movflags", "+faststart", f"{OUT}/{NAME}.mp4"], stdin=subprocess.PIPE)
     fl = flare()
