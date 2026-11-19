@@ -101,3 +101,29 @@ Konsep: format kiraan (listicle) yang tinggi retention – cold open pantas, tit
 Gaya: kata kunci 120–170 px Inter Black (emas panas + putih), zoom punch pada setiap slam, gegaran skrin pada impak, whip-pan motion blur antara jemaah/kad, kad bab skrin penuh (jalur emas bergerak + nombor gergasi), bar progres 1-2-3 di atas.
 Audio: muzik maqam 100 BPM + kick & clap (lebih perlahan dalam bab #3), boom pada title/kad bab/nama Ustaz, whoosh pada whip, shimmer pada setiap sebutan mutawif, tik kaunter 100%.
 Tajuk bab ditulis berdasarkan kata-kata jemaah sendiri (sempoi / banyak belajar, komitmen terbaik / boleh cari, first time / berjalan lancar).
+
+---
+
+# VERSI ACTION CINEMATIC (gaya trailer filem)
+
+**Fail:** `output/DM_Testimoni_ACTION_UstazZulhafeez_9x16.mp4` • 62 s • 1080×1920 • 30 fps • **Skrip:** `render/build_action.py`
+
+| Output | Babak | Visual / bunyi |
+|---|---|---|
+| 0:00–0:02.6 | "DARUL MUBARAK TRAVEL & TOURS – MEMPERSEMBAHKAN" | Hitam, teks emas metalik, bara api, sub-boom |
+| 0:02.6–0:05.4 | Teaser | 4 syot pantas (Ustaz di Quba slow-mo, taklimat lapangan terbang, jemaah), jam berdetik, flash cut |
+| 0:05.4–0:06.9 | Intertitle **"SATU PERJALANAN – KE TANAH SUCI"** | **BRAAM** |
+| 0:06.9–0:13.1 | Voice-over Jemaah 2 atas Masjid Quba slow-mo: *"Kita first time ni nak datang tempat yang Allah… memang paling suci dalam dunia ni kan."* | Slam "PALING SUCI", **freeze-frame** "JEMAAH – FIRST TIME UMRAH" |
+| 0:13.1–0:15.3 | *"Kita takut, kita tahu diri kita macam mana"* atas B-roll jemaah | Degupan jantung, slam "TAKUT" |
+| 0:15.3–0:21.1 | *"tapi dengan apa, berkat mutawif sendiri menunjuk ajar"* | **BRAAM** pada "BERKAT MUTAWIF" → Ustaz slow-mo + tag watak "USTAZ ZULHAFEEZ – MUTAWIF" |
+| 0:21.1–0:31.2 | Intertitle "MASJID QUBA – MADINAH" → Jemaah 3: *"Jemaah hilang… di Masjid Quba… tak masuk akal… dia ada kat mana ni."* | Jam berdetik makin laju, flash cutaway ke Quba |
+| 0:31.2–0:31.6 | **Senyap** (hitam) | – |
+| 0:31.6–0:33.8 | *"Tapi alhamdulillah, mutawif kita boleh cari."* | **BRAAM**, kenangan Ustaz atas Quba, slam "BOLEH CARI!" |
+| 0:33.8–0:50.8 | **Montaj aksi** (taiko 120 BPM + oud): "sempoi" • "komitmen terbaik, steady" • "minta… mutawif yang sama" • "100 peratus" • "Mutawif Zulhafeez memang A lah terbaik. Sempoi, padu, bahang." | Slam emas metalik, boom setiap hentakan, cut-out Ustaz pada "Zulhafeez", kaunter 100% |
+| 0:50.8–0:54.8 | **Title card filem: USTAZ ZULHAFEEZ** | Cut-out Ustaz bercahaya oren, bara api, BRAAM |
+| 0:54.8–0:57.8 | "SETIAP PERJALANAN UMRAH MENINGGALKAN SERIBU KENANGAN" | Atas Quba malam |
+| 0:57.8–1:02.0 | CTA: logo DM, "NAK RASAI PENGALAMAN INI?", butang "HUBUNGI KAMI" | |
+
+Rupa: letterbox (atas 190 px, bawah 250 px – subtitle dalam bar bawah), gred teal-oren, film grain, kilat anamorfik + chromatic aberration + gegaran pada setiap hentakan, teks emas metalik (Caladea/Inter Black).
+Bunyi trailer dijana sendiri (bebas hak cipta): drone, braam, boom, hit, jam berdetik, degupan jantung, riser, taiko, melodi Hijaz.
+Intertitle hanya menyatakan tempat/konteks (Tanah Suci, Masjid Quba) – semua kata-kata testimoni ialah ucapan asli jemaah.
